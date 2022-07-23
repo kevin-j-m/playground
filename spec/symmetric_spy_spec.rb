@@ -23,14 +23,12 @@ RSpec.describe "Symmetric Spies" do
   end
 
   class Mole
-    attr_reader :messages
-
     def initialize
       @messages = []
     end
 
     def receive_secret(message)
-      messages << Cipher.decode(message)
+      @messages << Cipher.decode(message)
     end
 
     def last_message
@@ -88,5 +86,9 @@ RSpec.describe "Symmetric Spies" do
     mole.receive_secret("mystery")
 
     expect(mole.last_message).to eq "hello"
+  end
+
+  it "passes" do
+    1 + 1 == 3
   end
 end
