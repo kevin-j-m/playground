@@ -5,6 +5,14 @@ class Note
     @offset = offset
   end
 
+  def octave
+    @root_octave + octaves_progressed
+  end
+
+  def value
+    note_progression.last
+  end
+
   def note_progression
     @note_cycle.take(@offset + 1)
   end
@@ -21,14 +29,6 @@ class Note
     end
 
     cs_passed
-  end
-
-  def octave
-    @root_octave + octaves_progressed
-  end
-
-  def value
-    note_progression.last
   end
 
   def notes
