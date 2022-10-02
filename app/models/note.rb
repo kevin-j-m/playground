@@ -1,12 +1,12 @@
 class Note
-  def initialize(root_note:, root_octave:, offset:)
-    @note_cycle = notes.rotate(notes.index(root_note)).cycle
-    @root_octave = root_octave
+  def initialize(starting_note:, starting_octave:, offset:)
+    @note_cycle = notes.rotate(notes.index(starting_note)).cycle
+    @starting_octave = starting_octave
     @offset = offset
   end
 
   def octave
-    @root_octave + octaves_progressed
+    @starting_octave + octaves_progressed
   end
 
   def value
@@ -17,14 +17,14 @@ class Note
     @note_cycle.take(@offset + 1)
   end
 
-  def c_root?
+  def c_start?
     @note_cycle.first == :c
   end
 
   def octaves_progressed
     cs_passed = note_progression.count(:c)
 
-    if c_root?
+    if c_start?
       cs_passed -= 1
     end
 
