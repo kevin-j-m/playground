@@ -13,12 +13,15 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/posts", type: :request do
-  
+
   # This should return the minimal set of attributes required to create a valid
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      title: "A good post",
+      body: "Don't forget to like and subscribe!",
+    }
   }
 
   let(:invalid_attributes) {
