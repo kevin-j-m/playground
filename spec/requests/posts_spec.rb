@@ -29,24 +29,28 @@ RSpec.describe "/posts", type: :request do
   }
 
   describe "GET /index" do
-    it "renders a successful response" do
-      Post.create! valid_attributes
-      get posts_url
-      expect(response).to be_successful
+    it "reports to be a teapot when asked to brew coffee" do
+      # Post.create! valid_attributes
+      headers = { "X-COMMAND" => "brew coffee" }
+      get posts_url, headers: headers
+      expect(response.status).to eq 418
+      # expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
-    it "renders a successful response" do
+    it "reports to be a teapot when asked to brew coffee" do
       post = Post.create! valid_attributes
-      get post_url(post)
-      expect(response).to be_successful
+      get post_url(post), headers: headers
+
+      expect(response.status).to eq 418
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
       get new_post_url
+
       expect(response).to be_successful
     end
   end
