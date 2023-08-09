@@ -69,6 +69,8 @@ end
 # <->FROM
 # <-><->FOOS
 # ;
+# Talk about how this was helpful when outputting on the web. Using a special
+# character.
 
 # function_names
 ## with no changes
