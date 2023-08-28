@@ -23,6 +23,9 @@ class SqlFormatter
 
   def rules(rule)
     rule.in_values_num = 2
+    rule.function_names << "COALESCE"
+    rule.kw_minus1_indent_nl_x_plus1_indent << "JOIN"
+    rule.kw_minus1_indent_nl_x_plus1_indent << "COALESCE"
   end
 end
 
