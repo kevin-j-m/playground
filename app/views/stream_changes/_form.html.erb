@@ -1,0 +1,5 @@
+<%= form_with url: stream_container_stream_changes_path do |form| %>
+  <%= form.label :text, "Text:" %>
+  <%= form.text_field :text %>
+  <%= form.submit "Update result text" %>
+<% end %>
