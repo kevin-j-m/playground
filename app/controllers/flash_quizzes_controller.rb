@@ -6,7 +6,7 @@ class FlashQuizzesController < ApplicationController
   def show
     if params[:my_param] == "t"
       _value_to_use = flash[:baz]
-      redirect_to edit_flash_quizzes_path
+      redirect_to edit_flash_quiz_path
     end
   end
 
