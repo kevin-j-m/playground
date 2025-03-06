@@ -52,7 +52,6 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "anbt-sql-formatter"
-gem "concurrent-ruby", "< 1.3.5" # Remove when upgrading from Rails 7.0 https://github.com/rails/rails/pull/54264
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
