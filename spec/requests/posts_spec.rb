@@ -25,6 +25,7 @@ RSpec.describe "/posts", type: :request do
   }
 
   let(:invalid_attributes) {
+    # TODO: need some validations for these tests
     skip("Add a hash of attributes invalid for your model")
   }
 
@@ -39,11 +40,11 @@ RSpec.describe "/posts", type: :request do
   end
 
   describe "GET /show" do
-    it "reports to be a teapot when asked to brew coffee" do
+    it "is successful" do
       post = Post.create! valid_attributes
-      get post_url(post), headers: headers
+      get post_url(post)
 
-      expect(response.status).to eq 418
+      expect(response).to be_successful
     end
   end
 

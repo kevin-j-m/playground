@@ -8,15 +8,17 @@ RSpec.describe "posts/index", type: :view do
         body: "MyText"
       ),
       Post.create!(
-        title: "Title",
-        body: "MyText"
+        title: "Other Title",
+        body: "YourText"
       )
     ])
   end
 
   it "renders a list of posts" do
     render
-    assert_select "tr>td", text: "Title".to_s, count: 2
-    assert_select "tr>td", text: "MyText".to_s, count: 2
+    expect(rendered).to match(/Title/)
+    expect(rendered).to match(/MyText/)
+    expect(rendered).to match(/Other Title/)
+    expect(rendered).to match(/YourText/)
   end
 end

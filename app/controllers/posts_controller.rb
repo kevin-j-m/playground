@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    if headers["X-COMMAND"] == "brew coffee"
+    if request.headers["X-COMMAND"] == "brew coffee"
       head 418
     end
 
