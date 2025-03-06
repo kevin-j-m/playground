@@ -89,7 +89,7 @@ GEM
     io-console (0.8.0)
     irb (1.7.1)
       reline (>= 0.3.0)
-    jbuilder (2.11.5)
+    jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jsbundling-rails (1.0.3)
