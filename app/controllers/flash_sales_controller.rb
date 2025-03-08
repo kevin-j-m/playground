@@ -3,8 +3,8 @@ class FlashSalesController < ApplicationController
     if FlashSale.off?
       if AttemptLogger.log?
         Rails.logger.info "Flash sale accessed when over with cta: #{flash[:sale]}"
-        # TODO: use flash.keep to preserve it.
-        # flash.keep(:sale)
+        # use flash.keep to preserve it.
+        flash.keep(:sale)
       end
 
       redirect_to products_path and return

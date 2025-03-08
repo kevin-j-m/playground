@@ -16,8 +16,8 @@ class FlashQuizzesController < ApplicationController
       # session), so it does NOT delete the flash.
       redirect_to edit_flash_quiz_path(params[:id])
     elsif params[:redirect_to_edit].present?
-      binding.irb
       Rails.logger.info("accessed edit page with #{params[:redirect_to_edit]} while flash is #{flash[:foo]}")
+      flash.keep(:foo)
       # Here we have the call to flash
       # That loads the session by accessing session["flash"]
       # Because ActionDispatch::Request::Session def [](key) calls load_for_read!
