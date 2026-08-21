@@ -152,6 +152,8 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
+    nokogiri (1.18.9-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.18.9-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.9-x86_64-linux-gnu)
@@ -160,7 +162,9 @@ GEM
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
-    pg (1.5.9)
+    pg (1.6.3-arm64-darwin)
+    pg (1.6.3-x86_64-darwin)
+    pg (1.6.3-x86_64-linux)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -295,6 +299,7 @@ GEM
     zeitwerk (2.7.2)
 
 PLATFORMS
+  arm64-darwin-25
   x86_64-darwin-20
   x86_64-darwin-22
   x86_64-darwin-23
